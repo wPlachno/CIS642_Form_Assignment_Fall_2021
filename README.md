@@ -17,6 +17,11 @@ To Do:
 - Google Maps Integration (summary)
 - Google Maps Integration (form)
 
+Version 0.0.0.4 -
+	Added submitDialog for responding to the submit button.
+	Made E-Mail entry one input as opposed to two with an @ between them
+	Added summary.html, the summary page. Currently equivalent to form.html, but with no error divs, an align right edit button (that does not yet work), and all fields are readonly.
+	Added storage.js, which uses sessionStorage to save the form data
 Version 0.0.0.3 -  
 	Added form.js, the script for running form.html
 	The form now has validation.

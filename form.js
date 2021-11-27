@@ -22,6 +22,45 @@ function getValueOf(inputName){
 	return document.getElementsByName(inputName)[0].value;
 }
 
+// submitDialog
+// 	This object controls the modal dialog box. The dialog gets 
+//	displayed in two cases:
+//	1) The form has been filled and successfully saved.
+//	2) The form was invalid upon submission.
+// In both cases, the header and body text should be filled and
+//	the dialog needs to be triggered.
+// To trigger the dialog, the format function should be called
+//	with either submitDialog.success, or submitDialog.failure.
+//	After that, call submitDialog.show() to make it visible.
+var submitDialog {
+	success: { 
+		title: "Success!", 
+		body: "You have successfully submitted your answers to our survey! Thank you for participating. You will now be sent to a summary of the data you submitted.",
+		name: "success"
+	},
+	failure: {
+		title: "Oops!",
+		body: "It looks like their were invalid entries in your submission. Please review your answers and try again.",
+		name: "failure"
+	}, 
+	format: function(type) {
+		document.getElementById("dialog_header").innerText = type.title;
+		document.getElementById("dialog_body").innerText = type.body;
+		this.mode = type.name;
+	},
+	show: function() {
+		document.getElementById("dialog_frame").modal('show');
+		this.state = this.states.visible;
+	},
+	hide: function() {
+		document.getElementById("dialog_frame").modal('hide');
+		this.state = this.states.hidden;
+	},
+	states: { hidden: "hidden", visible: "visible" },
+	state: "hidden",	
+	mode: "success"
+}
+
 // Validation
 
 // validator
@@ -55,9 +94,17 @@ class validator {
 		
 // validation
 // Validation is an object which holds all of the validators that we need.
-// While the base validator class was designed to satisfy the validation 
-// requirements of most of the entries, some of the form controls will
-// need to override the data() function and/or the validate() function.
+// While the validator class was designed to satisfy the validation 
+// 	requirements of most of the entries, some of the form controls will
+// 	need to override the data() function and/or the validate() function.
+// The methods intended for outside use include:
+//	- validate(): The main function which loops through the validators,
+//				calling each of the validators validate() method. Will
+//				return true or false based on whether the data was valid
+//				or invalid.
+//	- compileAll(): A function to compile all of the current form data.
+//	- saveToStorage(): Triggers the storage object, located in storage.js,
+//				which will save the currrent form data to sessionStorage.
 var validation = {
 	keys: [],
 	invalid: [],
@@ -92,6 +139,10 @@ var validation = {
 			results[key] = this[key].data();
 		}
 		return results;
+	}, 
+	saveToStorage: function() {
+		storage.survey();
+		storage.save();
 	}
 }
 validation.addArray([
@@ -188,7 +239,6 @@ validation.budget.data = function() {
 //		email is done using two entries, the text before and the text after the @ sign.
 //		validation simply requires that only one @ is present.
 validation.email.validate = function() { return this.data().split('@').length == 2; }
-validation.email.data = function() { return getValueOf(this.name + '_name') + '@' + getValueOf(this.name + '_server'); }
 
 // - tos: [validate,data]
 //		tos is a checkbox the user activates to agree to the terms of service.
@@ -206,15 +256,30 @@ validation.captcha.data = function() { return grecaptcha.getResponse(); }
 
 // onSubmit()
 function validateOnSubmit(e) {
+	// Check for validation
 	if (!validation.validate()) {
+		// If invalid, show failure dialog
+		submitDialog.format(submitDialog.failure);
+		submitDialog.show();
 		e.preventDefault();
 		return false;
+		
 	} else {
-		sum = validation.compileAll();
-		root = window.location.pathname.split("form.html")[0];
-		window.location.href = root + "index.html";
+		// If success, save and show success
+		validation.saveToStorage();		
+		submitDialog.format(submitDialog.success);
+		submitDialog.show();
 		e.preventDefault();
 		return false;
 	}
 }
+function onSubmitDialogClose(e) {
+	// When the dialog closes, if we just had success,
+	if (submitDialog.mode == submitDialog.success.name) {
+		// Then switch over to the summary page.
+		root = window.location.pathname.split("form.html")[0];
+		window.location.href = root + "summary.html";		
+	}
+}
 document.getElementById("formA").addEventListener('submit', validateOnSubmit);
+document.getElementById("dialog_close").addEventListener('click', onSubmitDialogClose);
