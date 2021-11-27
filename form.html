@@ -38,41 +38,77 @@
 </head>
 <body class="container">
     <div class="row justify-content-md-center">
-        <header>
-            Please fill in the form below to take our survey! 
-        </header>
         <form id=formA >
 		
 			<!-- Subtitle: "Data survey form" -->
 			<legend>Data Survey Form</legend>
+			
+			<!-- Info Block: welcome message and required field key -->
+			<div class="row">
+				<p>Welcome! Please fill out the form below to participate in our survey!</p>
+				<p><a style="color:red">*</a> = Required fields</p>
+			</div>
 
 			<!-- Input: lastName, firstName, each validated up to 40 characters -->
 			<div class="row">
-				<label for="lastName" class="col-sm-2 col-form-label">Last Name: </label>
+				<label for="lastName" class="col-sm-2 col-form-label">Last Name: <a style="color:red">*</a></label>
 				<div class="col-sm-10">
 					<input type="text" name="lastName" class="form-control" placeholder="e.g. 'Smith'"/>
 				</div>
 			</div>
+			<div id="ERR_lastName" class="row">
+				<label class="col-sm-2 col-form-label"></label>
+				<div class="col-sm-10">
+					<div class="alert alert-danger d-flex align-items-center" role="alert">
+					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+					  <div>
+						The last name field cannot exceed 40 characters.
+					  </div>
+					</div>
+				</div>
+			</div>
 
 			<div class="row">
-				<label for="firstName" class="col-sm-2 col-form-label">First Name: </label>
+				<label for="firstName" class="col-sm-2 col-form-label">First Name: <a style="color:red">*</a></label>
 				<div class="col-sm-10">
 					<input type="text" name="firstName" class="form-control" placeholder="e.g. 'John'"/>
+				</div>
+			</div>
+			<div id="ERR_firstName" class="row">
+				<label class="col-sm-2 col-form-label"></label>
+				<div class="col-sm-10">
+					<div class="alert alert-danger d-flex align-items-center" role="alert">
+					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+					  <div>
+						The first name field cannot exceed 40 characters.
+					  </div>
+					</div>
 				</div>
 			</div>
 
 			<!-- Input: Preferred Title from: { none; student; professor; staff; retired; } -->
 			<div class="row">
-				<label for="prefTitle" class="col-sm-2 col-form-label">Preferred Title: </label>
+				<label for="prefTitle" class="col-sm-2 col-form-label">Preferred Title: <a style="color:red">*</a></label>
 				<div class="col-sm-10">
-					<select name="prefTitle" class="form-select" >
+					<select name="prefTitle" class="form-select">
 						<option selected class="disabled">Please select your preferred title</option>
-						<option value="none">None</option>
-						<option value="student">Student</option>
-						<option value="professor">Professor</option>
-						<option value="staff">Staff</option>
-						<option value="retired">Retired</option>
+						<option>None</option>
+						<option>Student</option>
+						<option>Professor</option>
+						<option>Staff</option>
+						<option>Retired</option>
 					</select>
+				</div>
+			</div>
+			<div id="ERR_prefTitle" class="row">
+				<label class="col-sm-2 col-form-label"></label>
+				<div class="col-sm-10">
+					<div class="alert alert-danger d-flex align-items-center" role="alert">
+					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+					  <div>
+						Please select a preferred title.
+					  </div>
+					</div>
 				</div>
 			</div>
 			
@@ -88,12 +124,34 @@
 					</div>
 				</div>
 			</div>
+			<div id="ERR_height" class="row">
+				<label class="col-sm-2 col-form-label"></label>
+				<div class="col-sm-10">
+					<div class="alert alert-danger d-flex align-items-center" role="alert">
+					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+					  <div>
+						Please enter a valid height.
+					  </div>
+					</div>
+				</div>
+			</div>
 			
 			<!-- Input: Phone validated to 10 digits -->
 			<div class="row">
 				<label for="phoneNum" class="col-sm-2 col-form-label">Phone Number: </label>
 				<div class="col-sm-10">
 					<input type="text" name="phoneNum" class="form-control" placeholder="e.g. '408-985-7655'"/>
+				</div>
+			</div>
+			<div id="ERR_phoneNum" class="row">
+				<label class="col-sm-2 col-form-label"></label>
+				<div class="col-sm-10">
+					<div class="alert alert-danger d-flex align-items-center" role="alert">
+					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+					  <div>
+						Please enter a 10 digit phone number.
+					  </div>
+					</div>
 				</div>
 			</div>
 			
@@ -107,39 +165,110 @@
 						- 'Zip/Postal Code'
 			-->
 			<div class="row">
-				<label for="address" class="col-sm-2 col-form-label">Address: </label>
+				<label for="address" class="col-sm-2 col-form-label">Address: <a style="color:red">*</a></label>
 				<div class="col-sm-10">
 					<input type="text" name="address" class="form-control" placeholder="e.g. '1600 Holloway Ave'"/>
 				</div>
 			</div>
+			<div id="ERR_address" class="row">
+				<label class="col-sm-2 col-form-label"></label>
+				<div class="col-sm-10">
+					<div class="alert alert-danger d-flex align-items-center" role="alert">
+					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+					  <div>
+						The address field cannot exceed 40 characters.
+					  </div>
+					</div>
+				</div>
+			</div>
+			
 			<div class="row">
 				<label for="apartment" class="col-sm-2 col-form-label">Apartment, Suite, etc: </label>
 				<div class="col-sm-10">
 					<input type="text" name="apartment" class="form-control" placeholder="e.g. 'Thornton Hall 906'"/>
 				</div>
 			</div>
+			<div id="ERR_apartment" class="row">
+				<label class="col-sm-2 col-form-label"></label>
+				<div class="col-sm-10">
+					<div class="alert alert-danger d-flex align-items-center" role="alert">
+					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+					  <div>
+						The apartment field cannot exceed 40 characters.
+					  </div>
+					</div>
+				</div>
+			</div>
+			
 			<div class="row">
-				<label for="city" class="col-sm-2 col-form-label">City: </label>
+				<label for="city" class="col-sm-2 col-form-label">City: <a style="color:red">*</a></label>
 				<div class="col-sm-10">
 					<input type="text" name="city" class="form-control" placeholder="e.g. 'San Francisco'"/>
 				</div>
 			</div>
+			<div id="ERR_city" class="row">
+				<label class="col-sm-2 col-form-label"></label>
+				<div class="col-sm-10">
+					<div class="alert alert-danger d-flex align-items-center" role="alert">
+					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+					  <div>
+						The city field cannot exceed 40 characters.
+					  </div>
+					</div>
+				</div>
+			</div>
+			
 			<div class="row">
-				<label for="state" class="col-sm-2 col-form-label">State: </label>
+				<label for="state" class="col-sm-2 col-form-label">State: <a style="color:red">*</a></label>
 				<div class="col-sm-10">
 					<input type="text" name="state" class="form-control" placeholder="e.g. 'CA'"/>
 				</div>
 			</div>
+			<div id="ERR_state" class="row">
+				<label class="col-sm-2 col-form-label"></label>
+				<div class="col-sm-10">
+					<div class="alert alert-danger d-flex align-items-center" role="alert">
+					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+					  <div>
+						The state field cannot exceed 40 characters.
+					  </div>
+					</div>
+				</div>
+			</div>
+			
 			<div class="row">
-				<label for="country" class="col-sm-2 col-form-label">Country/Region: </label>
+				<label for="country" class="col-sm-2 col-form-label">Country/Region: <a style="color:red">*</a></label>
 				<div class="col-sm-10">
 					<input type="text" name="country" class="form-control" placeholder="e.g. 'United States'"/>
 				</div>
 			</div>
+			<div id="ERR_country" class="row">
+				<label class="col-sm-2 col-form-label"></label>
+				<div class="col-sm-10">
+					<div class="alert alert-danger d-flex align-items-center" role="alert">
+					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+					  <div>
+						The country field cannot exceed 40 characters.
+					  </div>
+					</div>
+				</div>
+			</div>
+			
 			<div class="row">
-				<label for="postal" class="col-sm-2 col-form-label">Postal Code: </label>
+				<label for="postal" class="col-sm-2 col-form-label">Postal Code: <a style="color:red">*</a></label>
 				<div class="col-sm-10">
 					<input type="text" name="postal" class="form-control" placeholder="e.g. '94132'"/>
+				</div>
+			</div>
+			<div id="ERR_postal" class="row">
+				<label class="col-sm-2 col-form-label"></label>
+				<div class="col-sm-10">
+					<div class="alert alert-danger d-flex align-items-center" role="alert">
+					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+					  <div>
+						The postal code, or zip code, must be 5 digits long.
+					  </div>
+					</div>
 				</div>
 			</div>
 			
@@ -191,20 +320,20 @@
 				<label class="col-sm-2 col-form-label">Monthly Service Budget: </label>
 				<div class="col-sm-10">
 					<div class="form-check">
-					  <input class="form-check-input" type="radio" name="budget_low" id="budget_under_50" checked>
-					  <label class="form-check-label" for="budget_low">
+					  <input class="form-check-input" type="radio" name="budget" id="budget_under_50" checked>
+					  <label class="form-check-label" for="budget_under_50">
 						$50 or Less
 					  </label>
 					</div>
 					<div class="form-check">
-					  <input class="form-check-input" type="radio" name="budget_med" id="budget_under_100" checked>
-					  <label class="form-check-label" for="budget_med">
+					  <input class="form-check-input" type="radio" name="budget" id="budget_under_100">
+					  <label class="form-check-label" for="budget_under_100">
 						Between $50 and $100
 					  </label>
 					</div>
 					<div class="form-check">
-					  <input class="form-check-input" type="radio" name="budget_high" id="budget_over_100" checked>
-					  <label class="form-check-label" for="budget_high">
+					  <input class="form-check-input" type="radio" name="budget" id="budget_over_100">
+					  <label class="form-check-label" for="budget_over_100">
 						$100 or More
 					  </label>
 					</div>
@@ -213,7 +342,7 @@
 			
 			<!-- Input: Email, must have @ sign -->
 			<div class="row">
-				<label class="col-sm-2 col-form-label">E-Mail: </label>
+				<label class="col-sm-2 col-form-label">E-Mail: <a style="color:red">*</a></label>
 				<div class="col-sm-10">
 					<div class="input-group">
 						<input type="text" name="email_name" class="form-control"/>
@@ -222,10 +351,21 @@
 					</div>
 				</div>
 			</div>
+			<div id="ERR_email" class="row">
+				<label class="col-sm-2 col-form-label"></label>
+				<div class="col-sm-10">
+					<div class="alert alert-danger d-flex align-items-center" role="alert">
+					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+					  <div>
+						Please provide a proper email address.
+					  </div>
+					</div>
+				</div>
+			</div>
 			
 			<!-- Input: Checkbox for "I Agree to Terms" with dummy link. Must be checked at submission -->
 			<div class="row">
-				<label class="col-sm-2 col-form-label">Terms of Service: </label>
+				<label class="col-sm-2 col-form-label">Terms of Service: <a style="color:red">*</a></label>
 				<div class="col-sm-10">
 					<div class="form-check">
 						<input class="form-check-input" type="checkbox" value="" id="tos">
@@ -235,13 +375,58 @@
 					</div>
 				</div>
 			</div>
+			<div id="ERR_tos" class="row">
+				<label class="col-sm-2 col-form-label"></label>
+				<div class="col-sm-10">
+					<div class="alert alert-danger d-flex align-items-center" role="alert">
+					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+					  <div>
+						You must agree to our terms of service.
+					  </div>
+					</div>
+				</div>
+			</div>
 			
 			<!-- Input: Captcha validation -->
-			<div class="g-recaptcha" data-sitekey="6LdTB18dAAAAAI8SDqzo1SGWDBab6SERilpgdjqU"></div>
+			<div class="row">
+				<label class="col-sm-2 col-form-label">Captcha: <a style="color:red">*</a></label>
+				<div class="col-sm-10">
+					<div name="captcha" class="g-recaptcha" data-sitekey="6LdTB18dAAAAAI8SDqzo1SGWDBab6SERilpgdjqU"></div>
+				</div>
+			</div>
+			<div id="ERR_captcha" class="row">
+				<label class="col-sm-2 col-form-label"></label>
+				<div class="col-sm-10">
+					<div class="alert alert-danger d-flex align-items-center" role="alert">
+					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+					  <div>
+						Please prove you are not a robot.
+					  </div>
+					</div>
+				</div>
+			</div>
 
-			<input type="submit" value="Register" class="formSbt" name="regSubmit" />
+			<input type="submit" value="Register" class="btn btn-primary" name="regSubmit" />
         </form>
     </div>
+	<div class="modal" tabindex="-1">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title">Success!</h5>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		  </div>
+		  <div class="modal-body">
+			<p>You have successfully submitted your answers to our survey! Thank you for participating. Would you like to view a summary?</p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-primary">View summary</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
