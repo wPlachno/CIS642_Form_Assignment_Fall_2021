@@ -12,9 +12,12 @@ form.js 	- The javascript that runs form.html
 
 To Do:
 - CSS
-- Google Maps Integration (summary)
+-  Finish Google Maps Integration (summary) - needs createMArker
 - Google Maps Integration (form)
 
+Version 0.0.0.6 -
+	Added Google Maps API integration (summary.html)
+	Added dialog box for API errors (summary.html)
 Version 0.0.0.5 -
 	Changed the title of the summary page to match requirements
 	Added summary.js, a javascript file for controlling the summary page.
@@ -38,3 +41,7 @@ Version 0.0.0.2 -
 Version 0.0.0.1 -
 	Added form.html file, implemented core html skeleton.
 	Attempted to use Google Recaptcha.
+	
+Other Notes:
+	Google Maps key: AIzaSyA3X_euFDo1zOJm9b-HZ3149M0fjmrgqh4
+	Google Recaptcha key: 6LdTB18dAAAAAI8SDqzo1SGWDBab6SERilpgdjqU
