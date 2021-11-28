@@ -28,7 +28,10 @@ var storage = {
 		"tos"
 	],
 	values: {
-		wp6428482021: false;
+		wp6428482021: false
+	},
+	hasData: function() {
+		return this.values[this.siteKey];
 	},
 	load: function() {
 		if(sessionStorage[this.siteKey] == 'true') {
@@ -42,7 +45,7 @@ var storage = {
 		}
 	},
 	save: function() {
-		if (this.values[siteKey] == true) {
+		if (this.values[this.siteKey] == true) {
 			for (index in this.keys) {
 				key = this.keys[index];
 				sessionStorage[this.siteKey + '_' + key] = this.values[key];
@@ -60,20 +63,20 @@ var storage = {
 				
 				if (key == "height") {
 					let heightCrumbs = data.split(':');
-					document.getElementsByName(key + '_feet').value = heightCrumbs[0];
-					document.getElementsByName(key + '_inches').value = heightCrumbs[1];
+					document.getElementsByName(key + '_feet')[0].value = heightCrumbs[0];
+					document.getElementsByName(key + '_inches')[0].value = heightCrumbs[1];
 					
 				} else if (key == "phoneNum") {
-					let formattedData = data.splice(0,2) + '-' + data.splice(3,5) + '-' + data.splice(6);
-					document.getElementsByName(key).value = formattedData;					
+					let formattedData = data.slice(0,3) + '-' + data.slice(3,6) + '-' + data.slice(6);
+					document.getElementsByName(key)[0].value = formattedData;					
 					
 				} else if (key == "service") {
 					let servCrumbs = data.split(':');
 					let types = ["email", "phone", "facebook", "twitter", "surface", "visit"];
 					for (index in types) {
 						let servCrumb = false;
-						if (types[index] == '1') { servCrumb = true; }
-						document.getElementById(key + '_' + type).checked = servCrumb;
+						if (servCrumbs[index] == '1') { servCrumb = true; }
+						document.getElementById(key + '_' + types[index]).checked = servCrumb;
 					}					
 					
 				} else if (key == "budget") {
@@ -106,7 +109,7 @@ var storage = {
 			
 			if (key == "height") {
 				feet = document.getElementsByName(key + '_feet')[0].value;
-				inch = document.getElementsByName(key + '_inches')[0].value;
+				inches = document.getElementsByName(key + '_inches')[0].value;
 				this.values[key] = feet + ':' + inches;
 			
 			} else if (key == "phoneNum") {
@@ -125,7 +128,7 @@ var storage = {
 					typeKey = types[index];
 					if (index != 0) { typeFlag = typeFlag + ":"; }
 					thisTypeCrumb = "0";
-					if (document.getElementById(key + '_' + type).checked){ thisTypeCrumb = "1"; }
+					if (document.getElementById(key + '_' + typeKey).checked){ thisTypeCrumb = "1"; }
 					typeFlag = typeFlag + thisTypeCrumb;
 				}
 				this.values[key] = typeFlag;
@@ -154,4 +157,4 @@ var storage = {
 		this.values[this.siteKey] = true;
 	}
 		
-}
+};

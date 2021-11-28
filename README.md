@@ -12,11 +12,17 @@ form.js 	- The javascript that runs form.html
 
 To Do:
 - CSS
-- Summary Page
-- Web Storage
 - Google Maps Integration (summary)
 - Google Maps Integration (form)
 
+Version 0.0.0.5 -
+	Changed the title of the summary page to match requirements
+	Added summary.js, a javascript file for controlling the summary page.
+	summary will now populate with entered data from form
+	The Edit button on the summary page now sends you back to form
+	form will now populate if its already been filled out.
+	Fixed storage.js, now actually works.
+	Fixed submitDialog, now uses an instance of bootstrap.Modal.
 Version 0.0.0.4 -
 	Added submitDialog for responding to the submit button.
 	Made E-Mail entry one input as opposed to two with an @ between them

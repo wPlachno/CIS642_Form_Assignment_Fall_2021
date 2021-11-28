@@ -22,6 +22,17 @@ function getValueOf(inputName){
 	return document.getElementsByName(inputName)[0].value;
 }
 
+// checkStorage()
+//	When we load the page, we want to double check that storage
+//	 is empty. If not, lets populate our page with the data.
+function checkStorage(){
+	storage.load();
+	if (storage.hasData()){
+		storage.project();
+	}
+}
+window.addEventListener('load', checkStorage);
+
 // submitDialog
 // 	This object controls the modal dialog box. The dialog gets 
 //	displayed in two cases:
@@ -32,7 +43,7 @@ function getValueOf(inputName){
 // To trigger the dialog, the format function should be called
 //	with either submitDialog.success, or submitDialog.failure.
 //	After that, call submitDialog.show() to make it visible.
-var submitDialog {
+var submitDialog = {
 	success: { 
 		title: "Success!", 
 		body: "You have successfully submitted your answers to our survey! Thank you for participating. You will now be sent to a summary of the data you submitted.",
@@ -49,17 +60,27 @@ var submitDialog {
 		this.mode = type.name;
 	},
 	show: function() {
-		document.getElementById("dialog_frame").modal('show');
+		this.initialize();
+		this.modal.show();
 		this.state = this.states.visible;
 	},
 	hide: function() {
-		document.getElementById("dialog_frame").modal('hide');
+		this.modal.hide();
 		this.state = this.states.hidden;
 	},
+	initialize: function() {
+		if (!this.initialized){
+			this.modal = new bootstrap.Modal(document.getElementById("dialog_frame"), {});
+			this.initialized = true;
+		}
+	},
+		
 	states: { hidden: "hidden", visible: "visible" },
 	state: "hidden",	
-	mode: "success"
+	mode: "success",
+	initialized: false
 }
+
 
 // Validation
 

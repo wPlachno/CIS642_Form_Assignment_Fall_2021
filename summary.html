@@ -1,12 +1,12 @@
 <!--
-    form.html
+    summary.html
 	Written by: William Plachno
 
-    The form entry page for Will Plachno's CSC642 individual assignment.
+    The survey summary page for Will Plachno's CSC642 individual assignment.
 
     Requirements:
     - Title: "CSC 642848 Fall 2021 Individual Assignment William Plachno"
-	- Subtitle: "Data survey form"
+	- Subtitle: "Results Verification form"
 	- Input: lastName, firstName, each validated up to 40 characters
 	- Input: Preferred Title from: { none; student; professor; staff; retired; }
 	- Input: Height in feet and inches
@@ -33,16 +33,16 @@
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <link rel="stylesheet" type="text/css" href="form.css" />
-    <script type="text/javascript" src="form.js" defer="true"> </script>
     <script type="text/javascript" src="storage.js" defer="true"> </script>
+    <script type="text/javascript" src="summary.js" defer="true"> </script>
 	
 </head>
 <body class="container">
     <div class="row justify-content-md-center">
         <form id=formA >
 		
-			<!-- Subtitle: "Data survey Summary" -->
-			<legend>Data Survey Summary</legend>
+			<!-- Subtitle: "Results Verification" -->
+			<legend>Results Verification</legend>
 			
 			<!-- Info Block: welcome message and required field key -->
 			<div class="row">
@@ -245,7 +245,7 @@
 			<div class="row">
 				<label class="col-sm-2 col-form-label">Captcha: <a style="color:red">*</a></label>
 				<div class="col-sm-10">
-					The captcha was satisfied.
+					<input type="text" name="captcha" class="form-control input-lg" value="The captcha was satisfied" readonly/>
 				</div>
 			</div>
 
