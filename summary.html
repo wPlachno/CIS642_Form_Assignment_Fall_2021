@@ -36,7 +36,12 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3X_euFDo1zOJm9b-HZ3149M0fjmrgqh4&libraries=places&callback=onGoogleMapsLoaded"></script>
-	<script> function onGoogleMapsLoaded() { initMap(); } </script>
+	<script> 
+	var googleConnected = false;
+	function onGoogleMapsLoaded() { 
+		googleConnected = true;
+	} 
+	</script>
 	
 </head>
 <body class="container">
@@ -71,14 +76,7 @@
 			<div class="row">
 				<label for="prefTitle" class="col-sm-2 col-form-label">Preferred Title: <a style="color:red">*</a></label>
 				<div class="col-sm-10">
-					<select name="prefTitle" class="form-select input-lg" readonly>
-						<option>Please select your preferred title</option>
-						<option>None</option>
-						<option>Student</option>
-						<option>Professor</option>
-						<option>Staff</option>
-						<option>Retired</option>
-					</select>
+					<input type="text" name="prefTitle" class="form-control input-lg" readonly/>
 				</div>
 			</div>
 			
@@ -165,37 +163,37 @@
 				<label class="col-sm-2 col-form-label">Services Required: </label>
 				<div class="col-sm-10">
 					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="service_email" readonly>
+						<input class="form-check-input" type="checkbox" value="" id="service_email" disabled="true">
 						<label class="form-check-label" for="service_email">
 						E-Mail
 						</label>
 					</div>
 					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="service_phone" readonly>
+						<input class="form-check-input" type="checkbox" value="" id="service_phone" disabled="true">
 						<label class="form-check-label" for="service_phone">
 						Phone
 						</label>
 					</div>
 					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="service_facebook" readonly>
+						<input class="form-check-input" type="checkbox" value="" id="service_facebook" disabled="true">
 						<label class="form-check-label" for="service_facebook">
 						Facebook
 						</label>
 					</div>
 					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="service_twitter" readonly>
+						<input class="form-check-input" type="checkbox" value="" id="service_twitter" disabled="true">
 						<label class="form-check-label" for="service_twitter">
 						Twitter
 						</label>
 					</div>
 					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="service_surface" readonly>
+						<input class="form-check-input" type="checkbox" value="" id="service_surface" disabled="true">
 						<label class="form-check-label" for="service_surface">
 						Surface Mail
 						</label>
 					</div>
 					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="service_visit" readonly>
+						<input class="form-check-input" type="checkbox" value="" id="service_visit" disabled="true">
 						<label class="form-check-label" for="service_visit">
 						Personal Visit
 						</label>
@@ -208,19 +206,19 @@
 				<label class="col-sm-2 col-form-label">Monthly Service Budget: </label>
 				<div class="col-sm-10">
 					<div class="form-check">
-					  <input class="form-check-input input-lg" type="radio" name="budget" id="budget_under_50" readonly>
+					  <input class="form-check-input input-lg" type="radio" name="budget" id="budget_under_50" disabled="true">
 					  <label class="form-check-label" for="budget_under_50">
 						$50 or Less
 					  </label>
 					</div>
 					<div class="form-check">
-					  <input class="form-check-input input-lg" type="radio" name="budget" id="budget_under_100" readonly>
+					  <input class="form-check-input input-lg" type="radio" name="budget" id="budget_under_100" disabled="true">
 					  <label class="form-check-label" for="budget_under_100">
 						Between $50 and $100
 					  </label>
 					</div>
 					<div class="form-check">
-					  <input class="form-check-input input-lg" type="radio" name="budget" id="budget_over_100" readonly>
+					  <input class="form-check-input input-lg" type="radio" name="budget" id="budget_over_100" disabled="true">
 					  <label class="form-check-label" for="budget_over_100">
 						$100 or More
 					  </label>
@@ -241,7 +239,7 @@
 				<label class="col-sm-2 col-form-label">Terms of Service: <a style="color:red">*</a></label>
 				<div class="col-sm-10">
 					<div class="form-check">
-						<input class="form-check-input input-lg" type="checkbox" value="" id="tos" readonly>
+						<input class="form-check-input input-lg" type="checkbox" value="" id="tos" disabled="true">
 						<label class="form-check-label" for="tos">
 						I accept the <a href="">Terms of Service</a>
 						</label>

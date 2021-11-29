@@ -12,9 +12,16 @@ form.js 	- The javascript that runs form.html
 
 To Do:
 - CSS
--  Finish Google Maps Integration (summary) - needs createMArker
+- On summary, switch non-text fields to text and add projection overrides
 - Google Maps Integration (form)
 
+Version 0.0.0.7 -
+	Added a marker for the address
+	Moved the Google API code into gAPI object
+	Added timeout functionality for the connection to Google Services.
+	Added connection timeout error message to errorDialog.
+	'disabled' the checkboxes and radios on summary.html
+	Switched the select of prefTitle to a text bar
 Version 0.0.0.6 -
 	Added Google Maps API integration (summary.html)
 	Added dialog box for API errors (summary.html)
