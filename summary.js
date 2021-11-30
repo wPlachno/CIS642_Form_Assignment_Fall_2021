@@ -221,12 +221,12 @@ window.addEventListener('load', initMap);
 // during initMap so that we can send the address to the
 // Places API.
 function getAddress() {
-	let address = storage.values.address + " ";
-	let apartment = storage.values.apartment + " ";
-	let city = storage.values.city + " ";
-	let state = storage.values.state + " ";
-	let country = storage.values.country + " ";
-	let zip = storage.values.zip;
+	let address = storage.address.data + " ";
+	let apartment = storage.apartment.data + " ";
+	let city = storage.city.data + " ";
+	let state = storage.state.data + " ";
+	let country = storage.country.data + " ";
+	let zip = storage.postal.data;
 	return address + apartment + city + state + country + zip;
 }
 

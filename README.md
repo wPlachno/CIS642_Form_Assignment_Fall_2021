@@ -6,15 +6,22 @@ Written by: William Plachno
 Date Started: 11/18/2021
 
 Files:
-index.html 	- The entrypoint for the system. An html page specifically so that we can have GitHub host our pages.
-form.html 	- The first page of this project, form.html is an html form page, designed to the specifications outlined in CSC642, using bootstrap, the google maps api, and a captcha api. Includes a reference to form.js, the file that contains all of the javascript for this html page. 
-form.js 	- The javascript that runs form.html
+index.html 			- The entrypoint for the system. An html page specifically so that we can have GitHub host our pages.
+form.html 			- The first page of this project, form.html is an html form page, designed to the specifications outlined in CSC642, using bootstrap, the google maps api, and a captcha api. Includes a reference to form.js, the file that contains all of the javascript for this html page. 
+form.js 			- The javascript that runs form.html
+summary.html		- The summary page which loads the data entered into form.html and displays it readonly. Also shows the entered address on a map using Google Maps/Places API.
+summary.js			- The javascript the does the google APIs and runs summary.html
+storage.js			- A Javascript file specifically for saving and loading form data to sessionStorage
+ProjectPrompt.pdf	- The promp for the project, saved and readable.
 
 To Do:
 - CSS
+- storage.js: make projection and survey methods of the keys
 - On summary, switch non-text fields to text and add projection overrides
 - Google Maps Integration (form)
 
+Version 0.0.0.8 - 
+	Modified storage to use a default storageKey class
 Version 0.0.0.7 -
 	Added a marker for the address
 	Moved the Google API code into gAPI object
