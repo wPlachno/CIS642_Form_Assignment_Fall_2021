@@ -44,9 +44,9 @@
 	</script>
 	
 </head>
-<body class="container">
+<body class="container my-2" style="background-color:#212151;">
     <div class="row justify-content-md-center">
-        <form id=formA >
+        <form id=formA class="col-md-6" style="background-color:#d0d0df;border-radius:5px;box-shadow: 5px 2px 2px #111141;">
 		
 			<!-- Subtitle: "Results Verification" -->
 			<legend>Results Verification</legend>
@@ -58,32 +58,34 @@
 			</div>
 
 			<!-- Input: lastName, firstName, each validated up to 40 characters -->
-			<div class="row">
-				<label for="lastName" class="col-sm-2 col-form-label">Last Name: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="lastName" class="col-sm-4 col-form-label">Last Name: <a style="color:red">*</a></label>
+				<div class="col-sm-8">
 					<input type="text" name="lastName" class="form-control input-lg" readonly/>
 				</div>
 			</div>
 
-			<div class="row">
-				<label for="firstName" class="col-sm-2 col-form-label">First Name: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="firstName" class="col-sm-4 col-form-label">First Name: <a style="color:red">*</a></label>
+				<div class="col-sm-8">
 					<input type="text" name="firstName" class="form-control input-lg" readonly/>
 				</div>
 			</div>
+			
+			<hr />
 
 			<!-- Input: Preferred Title from: { none; student; professor; staff; retired; } -->
-			<div class="row">
-				<label for="prefTitle" class="col-sm-2 col-form-label">Preferred Title: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="prefTitle" class="col-sm-4 col-form-label">Preferred Title: <a style="color:red">*</a></label>
+				<div class="col-sm-3">
 					<input type="text" name="prefTitle" class="form-control input-lg" readonly/>
 				</div>
 			</div>
 			
 			<!-- Input: Height in feet and inches -->
-			<div class="row">
-				<label class="col-sm-2 col-form-label">Height: </label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label class="col-sm-4 col-form-label">Height: </label>
+				<div class="col-sm-5">
 					<div class="input-group">
 						<input type="text" name="height_feet" class="form-control input-lg" readonly/>
 						<span class="input-group-text">feet</span>
@@ -94,12 +96,14 @@
 			</div>
 			
 			<!-- Input: Phone validated to 10 digits -->
-			<div class="row">
-				<label for="phoneNum" class="col-sm-2 col-form-label">Phone Number: </label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="phoneNum" class="col-sm-4 col-form-label">Phone Number: </label>
+				<div class="col-sm-4">
 					<input type="text" name="phoneNum" class="form-control input-lg" readonly/>
 				</div>
 			</div>
+			
+			<hr />
 			
 			<!-- Input: Address, 40 characters each, zip code to 5 digits -->
 			<!-- Note: The Address requires the following entries:
@@ -110,153 +114,100 @@
 						- 'Country'
 						- 'Zip/Postal Code'
 			-->
-			<div class="row">
-				<label for="location" class="col-sm-2 col-form-label">Map: </label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="location" class="col-sm-4 col-form-label">Map: </label>
+				<div class="col-sm-8">
 					<div id="map" style="height:190px;"> </div>
 				</div>
 			</div>
-			<div class="row">
-				<label for="address" class="col-sm-2 col-form-label">Address: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="address" class="col-sm-4 col-form-label">Address: <a style="color:red">*</a></label>
+				<div class="col-sm-8">
 					<input type="text" name="address" class="form-control input-lg" readonly/>
 				</div>
 			</div>
 			
-			<div class="row">
-				<label for="apartment" class="col-sm-2 col-form-label">Apartment, Suite, etc: </label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="apartment" class="col-sm-4 col-form-label">Apartment, Suite, etc: </label>
+				<div class="col-sm-8">
 					<input type="text" name="apartment" class="form-control input-lg" readonly/>
 				</div>
 			</div>
 			
-			<div class="row">
-				<label for="city" class="col-sm-2 col-form-label">City: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="city" class="col-sm-4 col-form-label">City: <a style="color:red">*</a></label>
+				<div class="col-sm-8">
 					<input type="text" name="city" class="form-control input-lg" readonly/>
 				</div>
 			</div>
 			
-			<div class="row">
-				<label for="state" class="col-sm-2 col-form-label">State: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="state" class="col-sm-4 col-form-label">State: <a style="color:red">*</a></label>
+				<div class="col-sm-8">
 					<input type="text" name="state" class="form-control input-lg" readonly/>
 				</div>
 			</div>
 			
-			<div class="row">
-				<label for="country" class="col-sm-2 col-form-label">Country/Region: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="country" class="col-sm-4 col-form-label">Country/Region: <a style="color:red">*</a></label>
+				<div class="col-sm-8">
 					<input type="text" name="country" class="form-control input-lg" readonly/>
 				</div>
 			</div>
 			
-			<div class="row">
-				<label for="postal" class="col-sm-2 col-form-label">Postal Code: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="postal" class="col-sm-4 col-form-label">Postal Code: <a style="color:red">*</a></label>
+				<div class="col-sm-2">
 					<input type="text" name="postal" class="form-control input-lg" readonly/>
 				</div>
 			</div>
 			
+			<hr />
+			
 			<!-- Input: Serviced required: {e-mail; phone; Facebook; Twitter; surface mail; personal visit; } -->
-			<div class="row">
-				<label class="col-sm-2 col-form-label">Services Required: </label>
-				<div class="col-sm-10">
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="service_email" disabled="true">
-						<label class="form-check-label" for="service_email">
-						E-Mail
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="service_phone" disabled="true">
-						<label class="form-check-label" for="service_phone">
-						Phone
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="service_facebook" disabled="true">
-						<label class="form-check-label" for="service_facebook">
-						Facebook
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="service_twitter" disabled="true">
-						<label class="form-check-label" for="service_twitter">
-						Twitter
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="service_surface" disabled="true">
-						<label class="form-check-label" for="service_surface">
-						Surface Mail
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="service_visit" disabled="true">
-						<label class="form-check-label" for="service_visit">
-						Personal Visit
-						</label>
-					</div>
+			<div class="row my-2">
+				<label class="col-sm-4 col-form-label">Services Required: </label>
+				<div class="col-sm-8">
+					<textarea rows="2" name="service" class="form-control input-lg" style="resize: none;overflow:hidden;" readonly></textarea>
 				</div>
 			</div>
 			
 			<!-- Input: monthly budget for services: { <$50; Between $50 and $100; >=$100; } -->
-			<div class="row">
-				<label class="col-sm-2 col-form-label">Monthly Service Budget: </label>
-				<div class="col-sm-10">
-					<div class="form-check">
-					  <input class="form-check-input input-lg" type="radio" name="budget" id="budget_under_50" disabled="true">
-					  <label class="form-check-label" for="budget_under_50">
-						$50 or Less
-					  </label>
-					</div>
-					<div class="form-check">
-					  <input class="form-check-input input-lg" type="radio" name="budget" id="budget_under_100" disabled="true">
-					  <label class="form-check-label" for="budget_under_100">
-						Between $50 and $100
-					  </label>
-					</div>
-					<div class="form-check">
-					  <input class="form-check-input input-lg" type="radio" name="budget" id="budget_over_100" disabled="true">
-					  <label class="form-check-label" for="budget_over_100">
-						$100 or More
-					  </label>
-					</div>
+			<div class="row my-2">
+				<label class="col-sm-4 col-form-label" for="budget">Monthly Budget: </label>
+				<div class="col-sm-5">
+					<input type="text" name="budget" class="form-control input-lg" readonly/>
 				</div>
 			</div>
 			
+			<hr />
+			
 			<!-- Input: Email, must have @ sign -->
-			<div class="row">
-				<label for="email" class="col-sm-2 col-form-label">E-Mail: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="email" class="col-sm-4 col-form-label">E-Mail: <a style="color:red">*</a></label>
+				<div class="col-sm-8">
 					<input type="text" name="email" class="form-control input-lg" readonly/>
 				</div>
 			</div>
 			
 			<!-- Input: Checkbox for "I Agree to Terms" with dummy link. Must be checked at submission -->
-			<div class="row">
-				<label class="col-sm-2 col-form-label">Terms of Service: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
-					<div class="form-check">
-						<input class="form-check-input input-lg" type="checkbox" value="" id="tos" disabled="true">
-						<label class="form-check-label" for="tos">
-						I accept the <a href="">Terms of Service</a>
-						</label>
-					</div>
+			<div class="row my-2">
+				<label class="col-sm-4 col-form-label" for="tos">Terms of Service: <a style="color:red">*</a></label>
+				<div class="col-sm-3">
+					<input type="text" name="tos" class="form-control input-lg" readonly/>
 				</div>
 			</div>
 			
 			<!-- Input: Captcha validation -->
-			<div class="row">
-				<label class="col-sm-2 col-form-label">Captcha: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label class="col-sm-4 col-form-label">Captcha: <a style="color:red">*</a></label>
+				<div class="col-sm-5">
 					<input type="text" name="captcha" class="form-control input-lg" value="The captcha was satisfied" readonly/>
 				</div>
 			</div>
 
 			<!-- Button Footer -->
-			<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+			<div class="d-grid gap-2 d-md-flex justify-content-md-end my-2">
 				<button id="edit_entry" type="button" class="btn btn-secondary me-md-2">Edit Submission</button>
 			</div
         </form>

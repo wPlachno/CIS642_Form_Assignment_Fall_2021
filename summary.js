@@ -312,3 +312,37 @@ var errorDialog = {
 	state: "hidden",	
 	initialized: false
 }
+
+storage.service.project = function() {
+	let types = ["E-Mail", "Phone", "Facebook", "Twitter", "Surface Mail", "Personal Visit"];
+	let serviceCrumbs = this.data.split(':');
+	let serviceString = "";
+	for (index in serviceCrumbs) {
+		if (serviceCrumbs[index] == '1') {
+			let stringCrumb = "";
+			if (serviceString != "") { 
+				stringCrumb = ", ";
+			}
+			serviceString = serviceString + stringCrumb + types[index];
+		}
+	}
+	document.getElementsByName(this.name)[0].value = serviceString;
+}
+storage.budget.project = function() {
+	let strings = ["Up to $50", "Between $50 and $100", "Over $100"];
+	let budgetString = "";
+	let budgetCrumbs = this.data.split(':');
+	for (index in budgetCrumbs) {
+		if (budgetCrumbs[index] == '1') {
+			budgetString = strings[index];
+		}
+	}
+	document.getElementsByName(this.name)[0].value = budgetString;	
+}
+storage.tos.project = function() {
+	let tosString = "Accepted";
+	if (!this.data) {
+		tosString = "Not " + tosString;
+	}
+	document.getElementsByName(this.name)[0].value = tosString;
+}

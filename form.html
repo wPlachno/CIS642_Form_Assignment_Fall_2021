@@ -37,9 +37,9 @@
     <script type="text/javascript" src="storage.js" defer="true"> </script>
 	
 </head>
-<body class="container">
+<body class="container my-2" style="background-color:#212151;">
     <div class="row justify-content-md-center">
-        <form id=formA >
+        <form id=formA class="col-md-6" style="background-color:#d0d0df;border-radius:5px;box-shadow: 5px 2px 2px #111141;">
 		
 			<!-- Subtitle: "Data survey form" -->
 			<legend>Data Survey Form</legend>
@@ -51,46 +51,52 @@
 			</div>
 
 			<!-- Input: lastName, firstName, each validated up to 40 characters -->
-			<div class="row">
-				<label for="lastName" class="col-sm-2 col-form-label">Last Name: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="lastName" class="col-md-4 col-form-label">Last Name: <a style="color:red">*</a></label>
+				<div class="col-md-8">
 					<input type="text" name="lastName" class="form-control input-lg" placeholder="e.g. 'Smith'"/>
 				</div>
 			</div>
 			<div id="ERR_lastName" class="row">
-				<label class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
+				<div class="col-sm-12">
 					<div class="alert alert-danger d-flex align-items-center" role="alert">
-					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+					  <svg class="bi flex-shrink-0 me-2 ml-2" width="24" height="24" role="img" aria-label="Danger:">
+						<rect x="10" y="2" rx="2" ry="2" width="4" height="14" style="fill:red;stroke-width:5;opacity:0.8" />
+						<rect x="10" y="18" rx="2" ry="2" width="4" height="4" style="fill:red;stroke-width:5;opacity:0.8" />
+					  </svg>
 					  <div>
 						The last name field cannot exceed 40 characters.
 					  </div>
 					</div>
 				</div>
+				<br />
 			</div>
 
-			<div class="row">
-				<label for="firstName" class="col-sm-2 col-form-label">First Name: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="firstName" class="col-sm-4 col-form-label">First Name: <a style="color:red">*</a></label>
+				<div class="col-sm-8">
 					<input type="text" name="firstName" class="form-control input-lg" placeholder="e.g. 'John'"/>
 				</div>
 			</div>
 			<div id="ERR_firstName" class="row">
-				<label class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
+				<div class="col-sm-12">
 					<div class="alert alert-danger d-flex align-items-center" role="alert">
-					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+					  <svg class="bi flex-shrink-0 me-2 ml-2" width="24" height="24" role="img" aria-label="Danger:">
+						<rect x="10" y="2" rx="2" ry="2" width="4" height="14" style="fill:red;stroke-width:5;opacity:0.8" />
+						<rect x="10" y="18" rx="2" ry="2" width="4" height="4" style="fill:red;stroke-width:5;opacity:0.8" />
+					  </svg>
 					  <div>
 						The first name field cannot exceed 40 characters.
 					  </div>
 					</div>
 				</div>
+				<br />
 			</div>
 
 			<!-- Input: Preferred Title from: { none; student; professor; staff; retired; } -->
-			<div class="row">
-				<label for="prefTitle" class="col-sm-2 col-form-label">Preferred Title: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="prefTitle" class="col-sm-4 col-form-label">Preferred Title: <a style="color:red">*</a></label>
+				<div class="col-sm-8">
 					<select name="prefTitle" class="form-select input-lg">
 						<option selected class="disabled">Please select your preferred title</option>
 						<option>None</option>
@@ -102,21 +108,24 @@
 				</div>
 			</div>
 			<div id="ERR_prefTitle" class="row">
-				<label class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
+				<div class="col-sm-12">
 					<div class="alert alert-danger d-flex align-items-center" role="alert">
-					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+					  <svg class="bi flex-shrink-0 me-2 ml-2" width="24" height="24" role="img" aria-label="Danger:">
+						<rect x="10" y="2" rx="2" ry="2" width="4" height="14" style="fill:red;stroke-width:5;opacity:0.8" />
+						<rect x="10" y="18" rx="2" ry="2" width="4" height="4" style="fill:red;stroke-width:5;opacity:0.8" />
+					  </svg>
 					  <div>
 						Please select a preferred title.
 					  </div>
 					</div>
 				</div>
+				<br />
 			</div>
 			
 			<!-- Input: Height in feet and inches -->
-			<div class="row">
-				<label class="col-sm-2 col-form-label">Height: </label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label class="col-sm-4 col-form-label">Height: </label>
+				<div class="col-sm-6">
 					<div class="input-group">
 						<input type="text" name="height_feet" class="form-control input-lg mg-1" placeholder="e.g. '5'"/>
 						<span class="input-group-text">feet</span>
@@ -126,34 +135,40 @@
 				</div>
 			</div>
 			<div id="ERR_height" class="row">
-				<label class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
+				<div class="col-sm-12">
 					<div class="alert alert-danger d-flex align-items-center" role="alert">
-					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+					  <svg class="bi flex-shrink-0 me-2 ml-2" width="24" height="24" role="img" aria-label="Danger:">
+						<rect x="10" y="2" rx="2" ry="2" width="4" height="14" style="fill:red;stroke-width:5;opacity:0.8" />
+						<rect x="10" y="18" rx="2" ry="2" width="4" height="4" style="fill:red;stroke-width:5;opacity:0.8" />
+					  </svg>
 					  <div>
 						Please enter a valid height.
 					  </div>
 					</div>
 				</div>
+				<br />
 			</div>
 			
 			<!-- Input: Phone validated to 10 digits -->
-			<div class="row">
-				<label for="phoneNum" class="col-sm-2 col-form-label">Phone Number: </label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="phoneNum" class="col-sm-4 col-form-label">Phone Number: </label>
+				<div class="col-sm-4">
 					<input type="text" name="phoneNum" class="form-control input-lg" placeholder="e.g. '408-985-7655'"/>
 				</div>
 			</div>
 			<div id="ERR_phoneNum" class="row">
-				<label class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
+				<div class="col-sm-12">
 					<div class="alert alert-danger d-flex align-items-center" role="alert">
-					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+					  <svg class="bi flex-shrink-0 me-2 ml-2" width="24" height="24" role="img" aria-label="Danger:">
+						<rect x="10" y="2" rx="2" ry="2" width="4" height="14" style="fill:red;stroke-width:5;opacity:0.8" />
+						<rect x="10" y="18" rx="2" ry="2" width="4" height="4" style="fill:red;stroke-width:5;opacity:0.8" />
+					  </svg>
 					  <div>
 						Please enter a 10 digit phone number.
 					  </div>
 					</div>
 				</div>
+				<br />
 			</div>
 			
 			<!-- Input: Address, 40 characters each, zip code to 5 digits -->
@@ -165,118 +180,136 @@
 						- 'Country'
 						- 'Zip/Postal Code'
 			-->
-			<div class="row">
-				<label for="address" class="col-sm-2 col-form-label">Address: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="address" class="col-sm-4 col-form-label">Address: <a style="color:red">*</a></label>
+				<div class="col-sm-8">
 					<input type="text" name="address" class="form-control input-lg" placeholder="e.g. '1600 Holloway Ave'"/>
 				</div>
 			</div>
 			<div id="ERR_address" class="row">
-				<label class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
+				<div class="col-sm-12">
 					<div class="alert alert-danger d-flex align-items-center" role="alert">
-					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+					  <svg class="bi flex-shrink-0 me-2 ml-2" width="24" height="24" role="img" aria-label="Danger:">
+						<rect x="10" y="2" rx="2" ry="2" width="4" height="14" style="fill:red;stroke-width:5;opacity:0.8" />
+						<rect x="10" y="18" rx="2" ry="2" width="4" height="4" style="fill:red;stroke-width:5;opacity:0.8" />
+					  </svg>
 					  <div>
 						The address field cannot exceed 40 characters.
 					  </div>
 					</div>
 				</div>
+				<br />
 			</div>
 			
-			<div class="row">
-				<label for="apartment" class="col-sm-2 col-form-label">Apartment, Suite, etc: </label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="apartment" class="col-sm-4 col-form-label">Apartment, Suite, etc: </label>
+				<div class="col-sm-8">
 					<input type="text" name="apartment" class="form-control input-lg" placeholder="e.g. 'Thornton Hall 906'"/>
 				</div>
 			</div>
 			<div id="ERR_apartment" class="row">
-				<label class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
+				<div class="col-sm-12">
 					<div class="alert alert-danger d-flex align-items-center" role="alert">
-					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+					  <svg class="bi flex-shrink-0 me-2 ml-2" width="24" height="24" role="img" aria-label="Danger:">
+						<rect x="10" y="2" rx="2" ry="2" width="4" height="14" style="fill:red;stroke-width:5;opacity:0.8" />
+						<rect x="10" y="18" rx="2" ry="2" width="4" height="4" style="fill:red;stroke-width:5;opacity:0.8" />
+					  </svg>
 					  <div>
 						The apartment field cannot exceed 40 characters.
 					  </div>
 					</div>
 				</div>
+				<br />
 			</div>
 			
-			<div class="row">
-				<label for="city" class="col-sm-2 col-form-label">City: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="city" class="col-sm-4 col-form-label">City: <a style="color:red">*</a></label>
+				<div class="col-sm-8">
 					<input type="text" name="city" class="form-control input-lg" placeholder="e.g. 'San Francisco'"/>
 				</div>
 			</div>
 			<div id="ERR_city" class="row">
-				<label class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
+				<div class="col-sm-12">
 					<div class="alert alert-danger d-flex align-items-center" role="alert">
-					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+					  <svg class="bi flex-shrink-0 me-2 ml-2" width="24" height="24" role="img" aria-label="Danger:">
+						<rect x="10" y="2" rx="2" ry="2" width="4" height="14" style="fill:red;stroke-width:5;opacity:0.8" />
+						<rect x="10" y="18" rx="2" ry="2" width="4" height="4" style="fill:red;stroke-width:5;opacity:0.8" />
+					  </svg>
 					  <div>
 						The city field cannot exceed 40 characters.
 					  </div>
 					</div>
 				</div>
+				<br />
 			</div>
 			
-			<div class="row">
-				<label for="state" class="col-sm-2 col-form-label">State: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="state" class="col-sm-4 col-form-label">State: <a style="color:red">*</a></label>
+				<div class="col-sm-8">
 					<input type="text" name="state" class="form-control input-lg" placeholder="e.g. 'CA'"/>
 				</div>
 			</div>
 			<div id="ERR_state" class="row">
-				<label class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
+				<div class="col-sm-12">
 					<div class="alert alert-danger d-flex align-items-center" role="alert">
-					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+					  <svg class="bi flex-shrink-0 me-2 ml-2" width="24" height="24" role="img" aria-label="Danger:">
+						<rect x="10" y="2" rx="2" ry="2" width="4" height="14" style="fill:red;stroke-width:5;opacity:0.8" />
+						<rect x="10" y="18" rx="2" ry="2" width="4" height="4" style="fill:red;stroke-width:5;opacity:0.8" />
+					  </svg>
 					  <div>
 						The state field cannot exceed 40 characters.
 					  </div>
 					</div>
 				</div>
+				<br />
 			</div>
 			
-			<div class="row">
-				<label for="country" class="col-sm-2 col-form-label">Country/Region: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="country" class="col-sm-4 col-form-label">Country/Region: <a style="color:red">*</a></label>
+				<div class="col-sm-8">
 					<input type="text" name="country" class="form-control input-lg" placeholder="e.g. 'United States'"/>
 				</div>
 			</div>
 			<div id="ERR_country" class="row">
-				<label class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
+				<div class="col-sm-12">
 					<div class="alert alert-danger d-flex align-items-center" role="alert">
-					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+					  <svg class="bi flex-shrink-0 me-2 ml-2" width="24" height="24" role="img" aria-label="Danger:">
+						<rect x="10" y="2" rx="2" ry="2" width="4" height="14" style="fill:red;stroke-width:5;opacity:0.8" />
+						<rect x="10" y="18" rx="2" ry="2" width="4" height="4" style="fill:red;stroke-width:5;opacity:0.8" />
+					  </svg>
 					  <div>
 						The country field cannot exceed 40 characters.
 					  </div>
 					</div>
 				</div>
+				<br />
 			</div>
 			
-			<div class="row">
-				<label for="postal" class="col-sm-2 col-form-label">Postal Code: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="postal" class="col-sm-4 col-form-label">Postal Code: <a style="color:red">*</a></label>
+				<div class="col-sm-2">
 					<input type="text" name="postal" class="form-control input-lg" placeholder="e.g. '94132'"/>
 				</div>
 			</div>
 			<div id="ERR_postal" class="row">
-				<label class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
+				<div class="col-sm-12">
 					<div class="alert alert-danger d-flex align-items-center" role="alert">
-					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+					  <svg class="bi flex-shrink-0 me-2 ml-2" width="24" height="24" role="img" aria-label="Danger:">
+						<rect x="10" y="2" rx="2" ry="2" width="4" height="14" style="fill:red;stroke-width:5;opacity:0.8" />
+						<rect x="10" y="18" rx="2" ry="2" width="4" height="4" style="fill:red;stroke-width:5;opacity:0.8" />
+					  </svg>
 					  <div>
 						The postal code, or zip code, must be 5 digits long.
 					  </div>
 					</div>
 				</div>
+				<br />
 			</div>
 			
 			<!-- Input: Serviced required: {e-mail; phone; Facebook; Twitter; surface mail; personal visit; } -->
-			<div class="row">
-				<label class="col-sm-2 col-form-label">Services Required: </label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label class="col-sm-4 col-form-label">Services Required: </label>
+				<div class="col-sm-8">
 					<div class="form-check">
 						<input class="form-check-input" type="checkbox" value="" id="service_email">
 						<label class="form-check-label" for="service_email">
@@ -317,9 +350,9 @@
 			</div>
 			
 			<!-- Input: monthly budget for services: { <$50; Between $50 and $100; >=$100; } -->
-			<div class="row">
-				<label class="col-sm-2 col-form-label">Monthly Service Budget: </label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label class="col-sm-4 col-form-label">Monthly Service Budget: </label>
+				<div class="col-sm-8">
 					<div class="form-check">
 					  <input class="form-check-input input-lg" type="radio" name="budget" id="budget_under_50" checked>
 					  <label class="form-check-label" for="budget_under_50">
@@ -342,28 +375,31 @@
 			</div>
 			
 			<!-- Input: Email, must have @ sign -->
-			<div class="row">
-				<label for="email" class="col-sm-2 col-form-label">E-Mail: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label for="email" class="col-sm-4 col-form-label">E-Mail: <a style="color:red">*</a></label>
+				<div class="col-sm-8">
 					<input type="text" name="email" class="form-control input-lg" placeholder="e.g. 'jim1234@gmail.com'"/>
 				</div>
 			</div>
 			<div id="ERR_email" class="row">
-				<label class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
+				<div class="col-sm-12">
 					<div class="alert alert-danger d-flex align-items-center" role="alert">
-					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+					  <svg class="bi flex-shrink-0 me-2 ml-2" width="24" height="24" role="img" aria-label="Danger:">
+						<rect x="10" y="2" rx="2" ry="2" width="4" height="14" style="fill:red;stroke-width:5;opacity:0.8" />
+						<rect x="10" y="18" rx="2" ry="2" width="4" height="4" style="fill:red;stroke-width:5;opacity:0.8" />
+					  </svg>
 					  <div>
 						Please provide a proper email address.
 					  </div>
 					</div>
 				</div>
+				<br />
 			</div>
 			
 			<!-- Input: Checkbox for "I Agree to Terms" with dummy link. Must be checked at submission -->
-			<div class="row">
-				<label class="col-sm-2 col-form-label">Terms of Service: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label class="col-sm-4 col-form-label">Terms of Service: <a style="color:red">*</a></label>
+				<div class="col-sm-6">
 					<div class="form-check">
 						<input class="form-check-input input-lg" type="checkbox" value="" id="tos">
 						<label class="form-check-label" for="tos">
@@ -372,40 +408,50 @@
 					</div>
 				</div>
 			</div>
-			<div id="ERR_tos" class="row">
-				<label class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
+			<div id="ERR_tos" class="row my-2">
+				<div class="col-sm-12">
 					<div class="alert alert-danger d-flex align-items-center" role="alert">
-					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+					  <svg class="bi flex-shrink-0 me-2 ml-2" width="24" height="24" role="img" aria-label="Danger:">
+						<rect x="10" y="2" rx="2" ry="2" width="4" height="14" style="fill:red;stroke-width:5;opacity:0.8" />
+						<rect x="10" y="18" rx="2" ry="2" width="4" height="4" style="fill:red;stroke-width:5;opacity:0.8" />
+					  </svg>
 					  <div>
 						You must agree to our terms of service.
 					  </div>
 					</div>
 				</div>
+				<br />
 			</div>
 			
 			<!-- Input: Captcha validation -->
-			<div class="row">
-				<label class="col-sm-2 col-form-label">Captcha: <a style="color:red">*</a></label>
-				<div class="col-sm-10">
+			<div class="row my-2">
+				<label class="col-sm-4 col-form-label">Captcha: <a style="color:red">*</a></label>
+				<div class="col-sm-8">
 					<div name="captcha" class="g-recaptcha" data-sitekey="6LdTB18dAAAAAI8SDqzo1SGWDBab6SERilpgdjqU"></div>
 				</div>
 			</div>
 			<div id="ERR_captcha" class="row">
-				<label class="col-sm-2 col-form-label"></label>
-				<div class="col-sm-10">
+				<div class="col-sm-12">
 					<div class="alert alert-danger d-flex align-items-center" role="alert">
-					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+					  <svg class="bi flex-shrink-0 me-2 ml-2" width="24" height="24" role="img" aria-label="Danger:">
+						<rect x="10" y="2" rx="2" ry="2" width="4" height="14" style="fill:red;stroke-width:5;opacity:0.8" />
+						<rect x="10" y="18" rx="2" ry="2" width="4" height="4" style="fill:red;stroke-width:5;opacity:0.8" />
+					  </svg>
 					  <div>
 						Please prove you are not a robot.
 					  </div>
 					</div>
 				</div>
+				<br />
 			</div>
 
-			<input type="submit" value="Register" class="btn btn-primary" name="regSubmit" />
+			<!-- Button Footer -->
+			<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+				<input type="submit" value="Register" class="btn btn-primary me-md-2" name="regSubmit" />
+			</div
         </form>
     </div>
+	
 	<!-- dialog box -->
 	<div id="dialog_frame" class="modal" tabindex="-1">
 	  <div class="modal-dialog">

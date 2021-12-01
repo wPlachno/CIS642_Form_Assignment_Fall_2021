@@ -14,7 +14,7 @@ There are three categories of javascript covered in this file:
 // Operational
 
 // DEBUG: If this is true, then we override checking the captcha.
-var DEBUG = true;
+var DEBUG = false;
 
 // getValueOf: This queries the DOM for the value of the element 
 //		with the given name.
@@ -27,7 +27,7 @@ function getValueOf(inputName){
 //	 is empty. If not, lets populate our page with the data.
 function checkStorage(){
 	storage.load();
-	if (storage.hasData()){
+	if (storage.hasData){
 		storage.project();
 	}
 }

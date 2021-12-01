@@ -20,6 +20,14 @@ To Do:
 - On summary, switch non-text fields to text and add projection overrides
 - Google Maps Integration (form)
 
+Version 0.0.0.9 -
+	Modified summary to have Service as a text list of accepted services.
+	Modified summary to have budget as text.
+	Modified summary to have tos as text.
+	Added background color
+	Limited form width
+	Adjusted form control widths
+	Added spacing between form controls.
 Version 0.0.0.8 - 
 	Modified storage to use a default storageKey class
 Version 0.0.0.7 -
