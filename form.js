@@ -206,6 +206,7 @@ validation.height.data = function() {
 validation.phoneNum.validate = function() { dat = this.data(); return dat.length == 0 || (!isNaN(dat) && this.raw.length == 10); }
 validation.phoneNum.data = function() { 
 	text = getValueOf(this.name)
+	if (text.length == 0) { return ""; }
 	this.raw = text.replace(/\D/, ""); 
 	while (this.raw != text) {
 		text = this.raw;

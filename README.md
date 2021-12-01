@@ -17,6 +17,8 @@ ProjectPrompt.pdf	- The promp for the project, saved and readable.
 To Do:
 - Google Maps Integration (form)
 
+Version 0.0.0.11 - 
+	Fixed Phone Number being required, because 0.0.0.10 required more testing.
 Version 0.0.0.10 -
 	Fixed Phone Number being required.
 Version 0.0.0.9 -
