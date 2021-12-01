@@ -2,7 +2,7 @@
 form.js - the javascript for form.html
 --------------------------------------------------------------
 William Plachno
-11/26/2021
+11/26/2021 - 11/30/2021
 --------------------------------------------------------------
 There are three categories of javascript covered in this file:
 1- Operational: 	Javascript to aid in interaction with the 
@@ -14,7 +14,7 @@ There are three categories of javascript covered in this file:
 // Operational
 
 // DEBUG: If this is true, then we override checking the captcha.
-var DEBUG = false;
+var DEBUG = true;
 
 // getValueOf: This queries the DOM for the value of the element 
 //		with the given name.
@@ -277,6 +277,10 @@ validation.captcha.data = function() { return grecaptcha.getResponse(); }
 // Submission
 
 // onSubmit()
+// Instead of submitting the form once the submit button is pressed, we will
+//	check validation and pop up a dialog informing the usert whether it was 
+//	successful or not. If it was, we save the data to sessionStorage before
+//	loading the dialog.
 function validateOnSubmit(e) {
 	// Check for validation
 	if (!validation.validate()) {
@@ -295,6 +299,9 @@ function validateOnSubmit(e) {
 		return false;
 	}
 }
+// onSubmitDialogClose
+//	If we close the dialog and the validation passed, we should load
+// the summary page.
 function onSubmitDialogClose(e) {
 	// When the dialog closes, if we just had success,
 	if (submitDialog.mode == submitDialog.success.name) {

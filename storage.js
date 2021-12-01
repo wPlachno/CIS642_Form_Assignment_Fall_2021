@@ -2,12 +2,21 @@
 storage.js - the javascript for saving data to the browser
 --------------------------------------------------------------
 William Plachno
-11/26/2021
+11/26/2021 - 11/30/2021
 --------------------------------------------------------------
 This file presents a class specifically for loading and saving
-the form data from form.html to sessionStorage. 
+the form data from form.html to sessionStorage or from 
+sessionStorage to summary.html.
 *************************************************************/
 
+// storageKey
+//	A class for holding the information for each individual 
+// piece of data that we will be saving/loading into storage.
+//	This class has a constructor with a name and a sitekey, 
+// a save function for saving to storage, a load function for
+// loading from storage, a project function for pushing from 
+// this objecty out into the html, and a survey function for
+// pulling data from the html into this object.
 class storageKey {
 	constructor(name, siteKey){
 		this.name = name;
@@ -19,7 +28,15 @@ class storageKey {
 	project(){ document.getElementsByName(this.name)[0].value = this.data; }
 	survey(){ this.data = document.getElementsByName(this.name)[0].value; }
 }
-		
+
+// storage
+//	This object holds all the data for storing information to
+// and from sessionStorage, mostly in the form of the storageKey 
+// objects. The main external methods are going to be the load 
+// function for loading from sessionStorage, the save function 
+// to save the keys to storage, the project function to project
+// the keys onto the html, and the survey to grab the key data
+// from the html.
 var storage = {
 	siteKey: 'wp6428482021',
 	hasData: false,
@@ -66,7 +83,10 @@ var storage = {
 		this.keyFunction( name => { this[name] = new storageKey(name, this.siteKey); } );
 		// Overrides
 		this.height.project = function() {
-			let heightCrumbs = this.data.split(':');
+			let raw = this.data;
+			let heightcrumbs;
+			if (raw.length == 0) { heightCrumbs = ["?","?"]; }
+			else { heightCrumbs = this.data.split(':'); }
 			document.getElementsByName(this.name + '_feet')[0].value = heightCrumbs[0];
 			document.getElementsByName(this.name + '_inches')[0].value = heightCrumbs[1];
 		};
@@ -76,8 +96,11 @@ var storage = {
 			this.data = feet + ':' + inches;
 		};
 		this.phoneNum.project = function() {
-			let formattedData = this.data.slice(0,3) + '-' + this.data.slice(3,6) + '-' + this.data.slice(6);
-			document.getElementsByName(this.name)[0].value = formattedData;	
+			let rawNumber = this.data;
+			if (!rawNumber.length == 0) {
+				let formattedData = rawNumber.slice(0,3) + '-' + rawNumber.slice(3,6) + '-' + rawNumber.slice(6);
+				document.getElementsByName(this.name)[0].value = formattedData;	
+			}
 		};
 		this.phoneNum.survey = function() {
 			let text = document.getElementsByName(this.name)[0].value;

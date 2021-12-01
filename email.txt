@@ -1,0 +1,9 @@
+	Here is the link to test my individual assignment URL https://wplachno.github.io/CIS642_Form_Assignment_Fall_2021/
+	For the development I used Bootstrap, laced with javascript, to help with form layout and aesthetics. There are modal dialog boxes on both the form page and the summary, each of which has a corresponding Javascript object for manipulation.
+	For field validation I used javascript and hidden Bootstrap. In form.js, I created a class to handle the individual entries which required validation, as well as a validation object which holds them all and controls the validation process. If a form control is invalid, an alert is shown with an adequate error message.
+	For maps I used the Google Maps API and the Google Places API.
+	For captcha I used Google Recaptcha. 
+	For this work I was helped by all of the wonderful contributors at stackoverflow, where every question has been answered and usually with alternatives. No other students helped other than a passing glance at a comment on our group project discord server regard using HTML5 Web Storage to save values between pages.
+	Documentation and Code I developed for this assignment are in github https://github.com/wPlachno/CIS642_Form_Assignment_Fall_2021
+	Regards
+	William Plachno

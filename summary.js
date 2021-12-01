@@ -314,7 +314,7 @@ var errorDialog = {
 }
 
 storage.service.project = function() {
-	let types = ["E-Mail", "Phone", "Facebook", "Twitter", "Surface Mail", "Personal Visit"];
+	let types = ["e-mail", "phone", "Facebook", "Tweeter", "surface mail", "personal visit"];
 	let serviceCrumbs = this.data.split(':');
 	let serviceString = "";
 	for (index in serviceCrumbs) {
@@ -329,7 +329,7 @@ storage.service.project = function() {
 	document.getElementsByName(this.name)[0].value = serviceString;
 }
 storage.budget.project = function() {
-	let strings = ["Up to $50", "Between $50 and $100", "Over $100"];
+	let strings = ["less than $ 50", "between $ 50 and $ 100", "above $ 100"];
 	let budgetString = "";
 	let budgetCrumbs = this.data.split(':');
 	for (index in budgetCrumbs) {

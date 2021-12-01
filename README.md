@@ -13,10 +13,14 @@ summary.html		- The summary page which loads the data entered into form.html and
 summary.js			- The javascript the does the google APIs and runs summary.html
 storage.js			- A Javascript file specifically for saving and loading form data to sessionStorage
 ProjectPrompt.pdf	- The promp for the project, saved and readable.
+email.txt			- The text included in the submission email.
 
 To Do:
 - Google Maps Integration (form)
 
+Version 0.0.1.0 -
+	Added email.txt, the submission email.
+	Configured some localization to match project requirements exactly.
 Version 0.0.0.11 - 
 	Fixed Phone Number being required, because 0.0.0.10 required more testing.
 Version 0.0.0.10 -
