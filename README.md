@@ -18,6 +18,8 @@ email.txt			- The text included in the submission email.
 To Do:
 - Google Maps Integration (form)
 
+Version 0.0.1.1 - 
+	Added shortcut to github hosted form
 Version 0.0.1.0 -
 	Added email.txt, the submission email.
 	Configured some localization to match project requirements exactly.
