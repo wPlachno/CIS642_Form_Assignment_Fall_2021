@@ -15,11 +15,10 @@ storage.js			- A Javascript file specifically for saving and loading form data t
 ProjectPrompt.pdf	- The promp for the project, saved and readable.
 
 To Do:
-- CSS
-- storage.js: make projection and survey methods of the keys
-- On summary, switch non-text fields to text and add projection overrides
 - Google Maps Integration (form)
 
+Version 0.0.0.10 -
+	Fixed Phone Number being required.
 Version 0.0.0.9 -
 	Modified summary to have Service as a text list of accepted services.
 	Modified summary to have budget as text.
